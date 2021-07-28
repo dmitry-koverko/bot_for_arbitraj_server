@@ -25,6 +25,7 @@ firebase.initializeApp(firebaseConfig);
 app.post('/api/user/:id/add_balance', function (req, res) {
    //req.query.tagId
   // create user in req.body
+  console.log(req.body);
   res.send(req.body.label)
 })
 
