@@ -1,6 +1,7 @@
 var firebase = require("firebase");
 var express = require('express')
 var bodyParser = require('body-parser')
+const path = require('path');
 var port = process.env.PORT || 80;
 var app = express()
 
@@ -29,6 +30,9 @@ app.post('/api/user/:id/add_balance', function (req, res) {
   res.send(req.body.label)
 })
 
+app.get('/payment',function(req,res){
+  res.sendFile(path.join(__dirname+'/payment.html'));
+});
 
 app.listen(port, () => {
 	console.log(`http://localhost:${port}`)
