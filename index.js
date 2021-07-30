@@ -2,7 +2,7 @@ var firebase = require("firebase");
 var express = require('express')
 var bodyParser = require('body-parser')
 const path = require('path');
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 var app = express()
 
 app.use(bodyParser.json())
@@ -24,8 +24,6 @@ firebase.initializeApp(firebaseConfig);
 
 
 app.post('/api/user/:id/add_balance', function (req, res) {
-   //req.query.tagId
-  // create user in req.body
   console.log(req.body);
   res.send(req.body.label)
 })
